@@ -1,0 +1,32 @@
+.footer {
+  background: #3c4242;
+  padding: 60px 110px;
+  display: flex;
+  flex-direction: column;
+
+  .footer-navigation {
+    display: flex;
+    margin-left: 76px;
+    gap: 80px;
+  }
+
+  .footer-socials {
+    width: auto;
+    height: auto;
+    align-self: start;
+    margin-left: 76px;
+    margin-top: 78px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .footer-copyright {
+    color: #fff;
+    font-family: "Causten", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 200%; /* 36px */
+    margin-top: 46px;
+  }
+}

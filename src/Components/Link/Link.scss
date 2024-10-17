@@ -1,0 +1,37 @@
+.nav-item {
+  color: #807D7E;
+  font-family: 'Causten', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.in-active {
+  text-decoration: none;
+  color: #3C4242;
+  font-family: "Causten", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+
+
+.nav-list__item {
+  text-decoration: none;
+}
+
+.aside__nav-item {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.33;
+  text-decoration: none;
+  color: rgb(128, 125, 126);
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: none;
+  outline: none;
+}

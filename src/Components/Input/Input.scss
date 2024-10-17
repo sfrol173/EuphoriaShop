@@ -1,0 +1,22 @@
+#search {
+  display: flex;
+  width: 267px;
+  padding: 12px 20px;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  background: #f6f6f6;
+
+  &::placeholder {
+    background-image: url("./icons/search.svg");
+    background-position: left;
+    background-repeat: no-repeat;
+    color: #807d7e;
+    padding-left: 20px;
+    font-family: "Causten", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "products": [
+    {
+      "name": "Легкий залізний ґудзик вниз Оксфордська сорочка",
+      "price": "707",
+      "photoUrl": "../../../public/images/greenShirt.jpg",
+      "article": "art1",
+      "color": "green",
+      "gender": "men",
+      "category": "shirts"
+    },
+    {
+      "name": "Лляна купажна сорочка з довгими рукавами",
+      "price": "964",
+      "photoUrl": "../../../public/images/whiteShirt.jpg",
+      "article": "art2",
+      "color": "white",
+      "gender": "men",
+      "category": "shirts"
+    },
+    {
+      "name": "Лляна суміш Сорочка з коротким рукавом",
+      "price": "900",
+      "photoUrl": "../../../public/images/blueShirt.jpg",
+      "article": "art3",
+      "color": "blue",
+      "gender": "men",
+      "category": "shirts"
+    },
+    {
+      "name": "Лляна купажна сорочка з довгими рукавами",
+      "price": "964",
+      "photoUrl": "../../../public/images/whiteLongShirt.jpg",
+      "article": "art4",
+      "color": "white",
+      "gender": "men",
+      "category": "shirts"
+    },
+    {
+      "name": "Лляна купажна сорочка з довгими рукавами",
+      "price": "964",
+      "photoUrl": "../../../public/images/greenLongShirt.jpg",
+      "article": "art5",
+      "color": "green",
+      "gender": "men",
+      "category": "shirts"
+    },
+    {
+      "name": "Оксфордська сорочка з довгими рукавами",
+      "price": "804",
+      "photoUrl": "../../../public/images/brownLongShirt.jpg",
+      "article": "art6",
+      "color": "brown",
+      "gender": "men",
+      "category": "shirts"
+    },
+    {
+      "name": "Оксфордська сорочка з довгими рукавами",
+      "price": "804",
+      "photoUrl": "../../../public/images/blueLongShirt.jpg",
+      "article": "art7",
+      "color": "blue",
+      "gender": "men",
+      "category": "shirts"
+    },
+    {
+      "name": "Західна сорочка з довгим рукавом Cord Twin Pocket",
+      "price": "1125",
+      "photoUrl": "../../../public/images/blackLongShirt.jpg",
+      "article": "art8",
+      "color": "black",
+      "gender": "men",
+      "category": "shirts"
+    },
+    {
+      "name": "Легка в догляді сорочка з одним манжетом",
+      "price": "643",
+      "photoUrl": "../../../public/images/pinkLongShirt.jpg",
+      "article": "art9",
+      "color": "pink",
+      "gender": "men",
+      "category": "shirts"
+    },
+    {
+      "name": "Стандартний крій - Легкий залізний ґудзик вниз Оксфордська сорочка",
+      "price": "707",
+      "photoUrl": "../../../public/images/redLongShirt.jpg",
+      "article": "art10",
+      "color": "red",
+      "gender": "men",
+      "category": "shirts"
+    },
+    {
+      "name": "Худі на блискавці",
+      "price": "964",
+      "photoUrl": "../../../public/images/greenHoodie.jpg",
+      "article": "art11",
+      "color": "green",
+      "gender": "men",
+      "category": "Hoodies & Sweetshirt"
+    },
+    {
+      "name": "Легка блискавка через худі",
+      "price": "772",
+      "photoUrl": "../../../public/images/blueHoodie.jpg",
+      "article": "art12",
+      "color": "blue",
+      "gender": "men",
+      "category": "Hoodies & Sweetshirt"
+    },
+    {
+      "name": "Худі",
+      "price": "964",
+      "photoUrl": "../../../public/images/grayHoodie.jpg",
+      "article": "art13",
+      "color": "gray",
+      "gender": "men",
+      "category": "Hoodies & Sweetshirt"
+    },
+    {
+      "name": "Флісова куртка Borg на блискавці",
+      "price": "1543",
+      "photoUrl": "../../../public/images/whiteJacket.jpg",
+      "article": "art14",
+      "color": "white",
+      "gender": "men",
+      "category": "Hoodies & Sweetshirt"
+    },
+    {
+      "name": "Спортивне худі",
+      "price": "1222",
+      "photoUrl": "../../../public/images/blueSportHoodie.jpg",
+      "article": "art15",
+      "color": "blue",
+      "gender": "men",
+      "category": "Hoodies & Sweetshirt"
+    },
+    {
+      "name": "Текстурована верхня толстовка преміум-класу",
+      "price": "1225",
+      "photoUrl": "../../../public/images/blueSportHoodie.jpg",
+      "article": "art16",
+      "color": "blue",
+      "gender": "men",
+      "category": "Hoodies & Sweetshirt"
+    },
+    {
+      "name": "2 Пак худі",
+      "price": "1736",
+      "photoUrl": "../../../public/images/packHoodie.jpg",
+      "article": "art17",
+      "color": "black",
+      "color2": "gray",
+      "gender": "men",
+      "category": "Hoodies & Sweetshirt"
+    },
+    {
+      "name": "Толстовка омбре з Dip Dye",
+      "price": "1093",
+      "photoUrl": "../../../public/images/ambreHoodie.jpg",
+      "article": "art18",
+      "color": "white",
+      "color2": "brown",
+      "gender": "men",
+      "category": "Hoodies & Sweetshirt"
+    },
+    {
+      "name": "Nike Технічне руно Повний зіп-худі",
+      "price": "5722",
+      "photoUrl": "../../../public/images/blackHoodie.jpg",
+      "article": "art20",
+      "color": "black",
+      "gender": "men",
+      "category": "Hoodies & Sweetshirt"
+    }
+  ]
+}

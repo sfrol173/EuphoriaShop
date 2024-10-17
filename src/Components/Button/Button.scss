@@ -1,0 +1,121 @@
+.header-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #f6f6f6;
+  position: relative;
+
+  .favorite-num,
+  .cart-num {
+    background-color: black;
+    color: white;
+    width: 20px;
+    height: 20px;
+    top: -6px;
+    right: -6px;
+    align-content: center;
+    position: absolute;
+    border-radius: 4px;
+  }
+}
+
+.favorite {
+  background-image: url("./icons/emptyFavorites.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cart {
+  background-image: url("./icons/emptyCart.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer-socials__item {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+}
+
+.facebook {
+  background-image: url("./icons/facebook.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.instagram {
+  background-image: url("./icons/instagramm.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.twitter {
+  background-image: url("./icons/twitter.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.linkedin {
+  background-image: url("./icons/linkedIn.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card-button {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+.card-cart {
+  background-image: url("./icons/emptyCartWhite.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &:hover {
+    background-image: url("./icons/cartPurple.svg");
+  }
+}
+
+.in-cart {
+  background-image: url("./icons/cartPurple.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-favorite {
+  background-image: url("./icons/emptyFavoriteWhite.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &:hover {
+    background-image: url("./icons/favoritePurple.svg");
+  }
+}
+
+.in-favorite {
+  background-image: url("./icons/favoritePurple.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cart-buy__button {
+  width: fit-content;
+  padding: 16px;
+}
+
+.cart-buy__button {
+  padding: 16px 80px;
+  border-radius: 20px;
+
+  background-color: darkseagreen;
+  font-size: 24px;
+  align-self: center;
+  margin-top: 30px;
+  border: none;
+}

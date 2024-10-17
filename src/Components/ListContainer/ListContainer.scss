@@ -1,0 +1,39 @@
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: start;
+}
+
+.aside__nav {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: start;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.cart-container {
+  position: relative;
+  &:before {
+    content: "";
+    width: 60%;
+    height: 0;
+    border-bottom: 4px solid black;
+    border-radius: 50px;
+    bottom: -4%;
+    right: 12%;
+    position: absolute;
+  }
+}
