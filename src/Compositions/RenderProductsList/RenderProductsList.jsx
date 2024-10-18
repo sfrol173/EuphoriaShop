@@ -3,19 +3,23 @@ import { sendRequest } from "../../Helpers/sendRequest.js";
 
 import ProductCard from "../ProductCard/ProductCard.jsx";
 import ListContainer from "../../Components/ListContainer/ListContainer.jsx";
+import { fetchProductCards } from "../../store/slices/shop.slice.js";
+import { useSelector, useDispatch } from "react-redux";
+import { selectorProductCards } from "../../store/selectors.js";
 
 const RenderProductsList = () => {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
+
+  const productCards = useSelector(selectorProductCards);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    sendRequest("../public/data.json").then((data) => {
-      setData([...data.products]);
-    });
+    dispatch(fetchProductCards());
   }, []);
 
   return (
     <ListContainer classNames={"products-container"}>
-      {data?.map((card) => (
+      {productCards.map((card) => (
         <ProductCard
           key={card.article}
           imageURL={card.photoUrl}

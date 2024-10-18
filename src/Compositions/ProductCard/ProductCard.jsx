@@ -10,6 +10,9 @@ import Text from "../../Components/Text/Text.jsx";
 import ListItem from "../../Components/ListItem/ListItem.jsx";
 import { updateTotalPrice } from "../../Helpers/calculateTotalPrice.js";
 
+import { useDispatch } from "react-redux";
+import { openModal } from "../../store/slices/modal.slice.js";
+
 const ProductCard = ({
   key,
   imageURL,
