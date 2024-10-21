@@ -2,24 +2,34 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isOpen: false,
-  productData: null,
+  isFavorite: false,
+  isCart: false,
+  productKey: null,
 };
 
 const modalSlice = createSlice({
   name: "modal",
   initialState,
   reducers: {
-    openModal: (state, action) => {
+    isFavoriteOpen: (state, action) => {
+      state.isFavorite = true;
       state.isOpen = true;
-      state.productData = action.payload;
+      state.productKey = action.payload.productKey;
+    },
+    isCartOpen: (state, action) => {
+      state.isCart = true;
+      state.isOpen = true;
+      state.productKey = action.payload.productKey;
     },
     closeModal: (state) => {
       state.isOpen = false;
-      state.productData = null;
+      state.isFavorite = false;
+      state.isCart = false;
+      state.productKey = null;
     },
   },
 });
 
-export const { openModal, closeModal } = modalSlice.actions;
+export const { isFavoriteOpen, isCartOpen, closeModal } = modalSlice.actions;
 
 export default modalSlice.reducer;

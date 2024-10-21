@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { sendRequest } from "../../Helpers/sendRequest.js";
+import React, { useEffect } from "react";
 
 import ProductCard from "../ProductCard/ProductCard.jsx";
 import ListContainer from "../../Components/ListContainer/ListContainer.jsx";
@@ -8,9 +7,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectorProductCards } from "../../store/selectors.js";
 
 const RenderProductsList = () => {
-  // const [data, setData] = useState([]);
-
   const productCards = useSelector(selectorProductCards);
+
   const dispatch = useDispatch();
 
   useEffect(() => {

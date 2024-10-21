@@ -9,9 +9,18 @@ import RenderModal from "../RenderModal/RenderModal.jsx";
 import Text from "../../Components/Text/Text.jsx";
 import ListItem from "../../Components/ListItem/ListItem.jsx";
 import { updateTotalPrice } from "../../Helpers/calculateTotalPrice.js";
-
-import { useDispatch } from "react-redux";
-import { openModal } from "../../store/slices/modal.slice.js";
+import {
+  selectorModalOpen,
+  selectorCartModal,
+  selectorFavoriteModal,
+  selectorProductKey,
+} from "../../store/selectors.js";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  isFavoriteOpen,
+  isCartOpen,
+  closeModal,
+} from "../../store/slices/modal.slice.js";
 
 const ProductCard = ({
   key,
@@ -23,11 +32,8 @@ const ProductCard = ({
   isFavoritePage = false,
   isCartPage = false,
 }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isViewingCart, setIsViewingCart] = useState(false);
   const [isFavoriteAdded, setIsFavoriteAdded] = useState(false);
   const [isCartAdded, setIsCartAdded] = useState(false);
-  const [isViewingFavorites, setIsViewingFavorites] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
 
   const [productDetails, setProductDetails] = useState({
@@ -55,71 +61,76 @@ const ProductCard = ({
     }
   }, [article]);
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setIsViewingCart(false);
-    setIsViewingFavorites(false);
+  const dispatch = useDispatch();
+  const isModalOpen = useSelector(selectorModalOpen);
+  const isViewingCart = useSelector(selectorCartModal);
+  const isViewingFavorites = useSelector(selectorFavoriteModal);
+  const isCurrentCard = useSelector(selectorProductKey);
+
+  const handleClose = () => {
+    dispatch(closeModal());
   };
 
   const handleCartClick = () => {
-    setIsModalOpen(true);
-    setIsViewingCart(true);
+    dispatch(isCartOpen({ isCart: true, isOpen: true, productKey: article }));
   };
 
   const handleFavoriteClick = () => {
-    setIsModalOpen(true);
-    setIsViewingFavorites(true);
+    dispatch(
+      isFavoriteOpen({ isFavorite: true, isOpen: true, productKey: article })
+    );
   };
 
   const addProductToFavorites = () => {
     setIsFavoriteAdded(true);
-    setIsModalOpen(false);
+
     const favorites = sessionStorage.getItem("favorite");
 
     let favoriteItems = favorites ? JSON.parse(favorites) : {};
     favoriteItems[article] = productDetails;
 
     sessionStorage.setItem("favorite", JSON.stringify(favoriteItems));
-    closeModal();
+
+    handleClose();
     updateFavoriteItemCount();
   };
 
   const removeProductFromFavorites = () => {
     setIsFavoriteAdded(false);
-    setIsModalOpen(false);
+
     if (isFavoritePage) setIsDeleted(true);
 
     let favorites = JSON.parse(sessionStorage.getItem("favorite"));
     delete favorites[article];
 
     sessionStorage.setItem("favorite", JSON.stringify(favorites));
-    closeModal();
+    handleClose();
     updateFavoriteItemCount();
   };
 
   const addProductToCart = () => {
     setIsCartAdded(true);
-    setIsModalOpen(false);
+
     const cart = sessionStorage.getItem("cart");
 
     let cartItems = cart ? JSON.parse(cart) : {};
     cartItems[article] = productDetails;
 
     sessionStorage.setItem("cart", JSON.stringify(cartItems));
-    closeModal();
+    handleClose();
     updateCartItemCountDisplay();
   };
 
   const removeProductFromCart = () => {
     setIsCartAdded(false);
-    setIsModalOpen(false);
+
     if (isCartPage) setIsDeleted(true);
 
     let cartItems = JSON.parse(sessionStorage.getItem("cart"));
     delete cartItems[article];
 
     sessionStorage.setItem("cart", JSON.stringify(cartItems));
-    closeModal();
+    handleClose();
     updateCartItemCountDisplay();
     updateTotalPrice();
   };
@@ -146,44 +157,46 @@ const ProductCard = ({
             <Button
               classNames={"card-button card-favorite"}
               type={"button"}
-              onClick={handleFavoriteClick}
+              onClick={() => handleFavoriteClick()}
             />
           ) : (
             <Button
               classNames={"card-button in-favorite"}
               type={"button"}
-              onClick={handleFavoriteClick}
+              onClick={() => handleFavoriteClick()}
             />
           )}
           {!isCartAdded ? (
             <Button
               classNames={"card-button card-cart"}
               type={"button"}
-              onClick={handleCartClick}
+              onClick={() => handleCartClick()}
             />
           ) : (
             <Button
               classNames={"card-button in-cart"}
               type={"button"}
-              onClick={handleCartClick}
+              onClick={() => handleCartClick()}
             />
           )}
         </div>
-        <RenderModal
-          onClose={closeModal}
-          isModal={isModalOpen}
-          isFavorite={isViewingFavorites}
-          isCart={isViewingCart}
-          isAddFavorite={isFavoriteAdded}
-          imageURL={imageURL}
-          name={name}
-          category={category}
-          onAddFavorite={addProductToFavorites}
-          onRemoveFavorite={removeProductFromFavorites}
-          onAddCart={addProductToCart}
-          isAddCart={isCartAdded}
-          onRemoveCart={removeProductFromCart}
-        />
+        {isCurrentCard === article && (
+          <RenderModal
+            onClose={handleClose}
+            isModal={isModalOpen}
+            isFavorite={isViewingFavorites}
+            isCart={isViewingCart}
+            isAddFavorite={isFavoriteAdded}
+            imageURL={imageURL}
+            name={name}
+            category={category}
+            onAddFavorite={addProductToFavorites}
+            onRemoveFavorite={removeProductFromFavorites}
+            onAddCart={addProductToCart}
+            isAddCart={isCartAdded}
+            onRemoveCart={removeProductFromCart}
+          />
+        )}
       </ListItem>
     </>
   );
